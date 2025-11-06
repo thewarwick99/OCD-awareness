@@ -1,0 +1,121 @@
+/* General Body and Layout Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 60px; /* Default space for the fixed navigation bar */
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #3f51b5; 
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none; 
+    padding: 10px 15px;
+    margin: 5px; 
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    white-space: nowrap; 
+}
+
+.navbar a:hover {
+    background-color: #5c6bc0;
+}
+
+/* Content Section Styles */
+.section {
+    padding: 40px 10%;
+    min-height: 80vh; 
+    scroll-margin-top: 60px; /* Matches default body padding */
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+/* Specific Section Colors for visual separation */
+#What-is-OCD { background-color: #ffffff; }
+#Symptoms-of-OCD { background-color: #e8eaf6; }
+#How-to-assist-a-family-member-that-has-OCD { background-color: #ffffff; }
+#causes { background-color: #e8eaf6; }
+#introduction, #conclusion { background-color: #f4f4f9; }
+
+h2 {
+    color: #3f51b5;
+    border-bottom: 2px solid #3f51b5;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.disclaimer {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #ffccbc;
+    border-left: 5px solid #ff7043;
+    font-style: italic;
+}
+
+.symptom-group, .support-group, .treatment-options {
+    margin-bottom: 25px;
+    padding: 15px;
+    border-left: 3px solid #3f51b5;
+    background-color: #f8f8ff;
+}
+
+/* === Responsive Design (Media Query) === */
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        padding: 5px; 
+    }
+
+    /* CRITICAL FIX: Increased padding-top for the taller, wrapped navigation bar. */
+    body {
+        padding-top: 180px; 
+    }
+    
+    .navbar a {
+        width: 90%; 
+        text-align: center;
+        margin: 5px 0;
+    }
+    
+    .section {
+        padding: 20px 5%;
+        min-height: 70vh;
+        /* CRITICAL FIX: Increased scroll offset for anchor links. */
+        scroll-margin-top: 180px; 
+    }
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    margin: 20px 0; /* Add some margin above/below the video */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
